@@ -1,6 +1,54 @@
+<!--?php
+	#START : Проверка наличия активной сессии
+        require($_SERVER['DOCUMENT_ROOT'] . "/src/path/dt/sy/session_start.php");
+    #END
+    #START : Check if user is auth
+	    	require($_SERVER['DOCUMENT_ROOT'] . "/src/path/dt/sy/connectDB.php");
+	    //Проверяем, есть ли куки авторизации
+		    if(isset($_COOKIE['auth_token'])){
+		        //Если куки есть, находим пользователя по токену в базе данных
+			        $token = mysqli_real_escape_string($connect, $_COOKIE['auth_token']);
+			        $query = mysqli_query($connect, "SELECT * FROM users WHERE token = '$token'");
+			        $result = mysqli_fetch_assoc($query);
+
+			        if($result){
+			            //Если пользователь найден по токену, авторизуем его
+			                $_SESSION["user"] = [
+			                    "avatar"      => $result["avatar"],
+			                    "nickname"    => $result["nickname"],
+			                    "id"          => $result["id"],
+			                    "type"        => $result["type"],
+			                    "code"        => "",
+			                    "code_status" => "false",
+			                    "code_email"  => ""
+			                ];
+			        }
+		    }
+    #END
+
+	if(isset($_SESSION["user"]) && !empty($_SESSION["user"])){
+	    header("Location: feed.php");
+	    exit();
+	}
+
+	if(isset($_SESSION["admin"]) && !empty($_SESSION["admin"])){
+	     header("Location: feed.php");
+	    exit();
+	}
+
+	if(isset($_SESSION["admin"]) && isset($_SESSION["admin"]["status"]) && $_SESSION["admin"]["status"] == "true"){
+	    header("Location: admin.php");
+	    exit();
+	}
+?-->
+
 <!DOCTYPE html>
 <html lang='en-US'>
 <head>
+	<!--?php require_once "src/path/dt/sy/utf8.php";?-->
+	<!--?php require_once "src/path/dt/sy/titlehtml.php";?-->
+	<!--?php require_once "src/path/dt/sy/stylecss.php";?-->
+	<!--?php require_once "src/path/dt/sy/scriptjs.php";?-->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Наш Формат</title>
@@ -47,22 +95,28 @@
 						<div class="pf l0 vw100 mhwdec"></div>
 						<!--START : MENU-->
 							<!--?php require "src/path/dt/ss/index/nav/nav-menu/button-menu.php";?-->
+							@include('components.index.nav.nav-menu.button-menu')
 						<!--END-->
 						<!--START : LOGO-->
 							<!--?php require "src/path/dt/ss/index/nav/nav-logo/logo.php";?-->
+							@include('components.index.nav.nav-logo/logo')
 						<!--END-->
 						<!--START : SEARCH-->
 							<!--?php require "src/path/dt/ss/index/nav/nav-search/thnk-search.php";?-->
+							@include('components.index.nav.nav-search.thnk-search')
 						<!--END-->
 						<div>
 							<!--START : LANGUAGE-->
 								<!--?php require "src/path/dt/ss/index/nav/nav-region/popUpWindowLanguage.php";?-->
+								@include('components.index.nav.nav-region.popUpWindowLanguage')
 							<!--END-->
 							<!--START : CONNECT-->
 								<!--?php require "src/path/dt/ss/index/nav/nav-sign_in/popUpWindowCnct.php";?-->
+								@include('components.index.nav.nav-sign_in.popUpWindowCnct')
 							<!--END-->
 							<!--START : MENU-->
 								<!--?php require "src/path/dt/ss/index/nav/nav-menu/menu.php"; ?-->
+								@include('components.index.nav.nav-menu.menu')
 							<!--END-->
 							<!--START : MOBILE-->
 								<!--START : Search-->
