@@ -58,36 +58,45 @@
 <body class="APPEARANCE_body_js overflowjs DARK_THEME_COLOR_2">
 	<!--START : Preloader-->
 		<!--?php require_once "src/path/dt/sy/preloader.php"; ?-->
+		@include('components.sy.preloader')
 	<!--END-->
 	<!--START : Offline-->
 		<!--?php require_once "src/path/dt/sy/offline.php"; ?-->
+		@include('components.sy.offline')
 	<!--END-->
 	<!--START : Chat-->
 		<div class='noduplicate001_chat_js'>
 			<!--?php require "src/path/dt/sy/noduplicate001_chat.php"; ?-->
+			@include('components.sy.noduplicate001_chat')
 		</div>
 	<!--END-->
 	<div class="root p">
 		<div class="w p">
 			<!--START : REGISTRATION POP UP-->
 				<!--?php require_once "src/path/dt/ss/index/nav/nav-sign_in-create_account/registrationInSystem.php";?-->
+				@include('components.index.nav.nav-sign_in-create_account.registrationInSystem')
 			<!--END-->
 			<!--START : FORGOT-PASSWORD POP UP-->
 				<!--?php require_once "src/path/dt/ss/index/nav/nav-sign_in-recover_access/forgot-password.php";?-->
+				@include('components.index.nav.nav-sign_in-recover_access.forgot-password')
 			<!--END-->
 			<!--START : CHOOSE-A-DATE POP UP-->
 				<!--?php require_once "src/path/dt/ss/index/filter/filter-for-articles/src/button-more-filters/chooseAdate.php";?-->
+				@include('components.index.filter.filter-for-articles.src.button-more-filters.chooseAdate')
 			<!--END-->
 			<!--START : UNAUTHORIZED POP UP-->
 				<!--?php require_once "src/path/dt/ss/index/nav/nav-sign_in/unauthorized.php";?-->
+				@include('components.index.nav.nav-sign_in.unauthorized')
 			<!--END-->
 			<!--START : SHARE POP UP-->
 				<!--?php require_once "src/path/dt/ss/index/sidebar/sidebar-left/sidebar-home/sidebar-home-articles-share/sidebar-home-articles-share.php";?-->
+				@include('components.index.sidebar.sidebar-left.sidebar-home.sidebar-home-articles-share.sidebar-home-articles-share')
 			<!--END-->
 			<div class="pvhlzhdj_desk pvhlzhdj_mobile mainNAVjs pf h57 l0 z3 hmd df jcc appearance_nr_1_dual_js">
 		        <!--START : Mobile : ROW-BANNER-->
 					<div class="mobile_AD_js MRB_index_php_js w100 ab noneDesk">
 						<!--?php require($_SERVER['DOCUMENT_ROOT'] . "/src/path/dt/sy/mobile_AD.php"); ?-->
+						@include('components.sy.mobile_AD')
 					</div>
 				<!--END-->
 				<div class="hm p">
@@ -152,14 +161,17 @@
 					<!--?php
 						if(strpos($_SERVER['REQUEST_URI'], "/index.php") !== false || $_SERVER['REQUEST_URI'] == "/" || strpos($_SERVER['REQUEST_URI'], "/article.php") !== false) {
 							/*DUPLICATE 001*/
-								echo "<div class='APPEARANCE_iiasfj_js DARK_THEME_COLOR_2 id_index_articles_session_false_js a p l'>";
+								echo "-->
+								<div class='APPEARANCE_iiasfj_js DARK_THEME_COLOR_2 id_index_articles_session_false_js a p l'><!--";
 									/*START : BLUE*/
-										require "src/path/dt/ss/index/sidebar/sidebar-left/sidebar-left.php";
-									/*END*/
+										require "src/path/dt/ss/index/sidebar/sidebar-left/sidebar-left.php";-->
+										@include('components.index.sidebar.sidebar-left.sidebar-left')
+									<!--/*END*/
 									/*START : GREEN*/
-										require "src/path/dt/sy/noduplicate002.php";
-									/*END*/
-								echo "</div>";
+										require "src/path/dt/sy/noduplicate002.php";-->
+										@include('components.sy.noduplicate002')
+									<!--/*END*/-->
+								</div><!--echo "</div>";
 							/*DUPLICATE 001*/
 						}
 					?>
@@ -176,11 +188,18 @@
 		/*END*/
 	</script>
 	<script>
+		/*
+			//LanguagesCnct
+				var tslf_SignIn = "<!--?php echo $languagesCnct[$selectedLanguage]['SignIn'];?-->",
+					tslf_Cancel = "<!--?php echo $languagesCnct[$selectedLanguage]['Cancel'];?-->";
+			//LanguagesArticle
+				var tslf_AddAreply = "<!--?php echo $languagesArticle[$selectedLanguage]['AddAreply'];?-->";
+		*/
 		//LanguagesCnct
-			var tslf_SignIn = "<!--?php echo $languagesCnct[$selectedLanguage]['SignIn'];?-->",
-				tslf_Cancel = "<!--?php echo $languagesCnct[$selectedLanguage]['Cancel'];?-->";
+			var tslf_SignIn = "SignIn",
+				tslf_Cancel = "Cancel";
 		//LanguagesArticle
-			var tslf_AddAreply = "<!--?php echo $languagesArticle[$selectedLanguage]['AddAreply'];?-->";
+			var tslf_AddAreply = "AddAreply";
 	</script>
 	<script>
 		//System messages
