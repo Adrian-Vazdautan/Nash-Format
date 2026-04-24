@@ -80,7 +80,7 @@
                         $likeStatus = ""; #Initialize the variable
                     #Session : false
                         if(!isset($_SESSION['user'])){-->
-                            <!--$likeStatus = "--><div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16'><!--liked-0--></div><!--";
+                            <!--$likeStatus = "--><div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16 none'><!--liked-0--></div><!--";
                         } else {
                             #Session : true
                                 $checkLikeStatus  = mysqli_prepare($connect, "SELECT Liked FROM liked WHERE id_of_article = ? AND nickname = ? ORDER BY dateofpublication DESC LIMIT 1");

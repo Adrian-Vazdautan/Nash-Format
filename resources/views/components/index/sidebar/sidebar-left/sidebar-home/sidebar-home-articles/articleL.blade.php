@@ -36,7 +36,7 @@
 		#START : Hide/Complain
 			$markup_article_option_Hide_Complain = "-->
 			<!--START : Button Hide post-->
-			    <div class='buufjs aC c h40' onclick='unauthorized(".$article['id'].$IDWWRA."), hidePost(".$article['id'].$IDWWRA.")'>
+			    <div class='buufjs aC c h40 none' onclick='unauthorized(".$article['id'].$IDWWRA."), hidePost(".$article['id'].$IDWWRA.")'>
 	            	<!--START : Icon-->
 			            <div class='ac1 p l h40 w16 dg alc'>
 			        		<div class='APPEARANCE_articleLForbbiden_js APPEARANCE_DARK_articleLForbbiden_js ac1ico'></div>
@@ -50,7 +50,7 @@
 		        </div>
 		    <!--END-->
 		    <!--START : Button Complain-->
-		        <div class='buufjs aC c h40' onclick='unauthorized(".$article['id'].$IDWWRA."), complain(".$article['id'].$IDWWRA.")'>
+		        <div class='buufjs aC c h40 none' onclick='unauthorized(".$article['id'].$IDWWRA."), complain(".$article['id'].$IDWWRA.")'>
 	        		<!--START : Icon-->
 			            <div class='ac1 p l h40 w16 dg alc'>
 			        		<div class='APPEARANCE_articleLComplain_js APPEARANCE_DARK_articleLComplain_js ac1icoCompl'></div>
@@ -63,14 +63,11 @@
 		            <!--END-->
 		        </div>
 			<!--END--><!--". $makeStarWrap;
-
-			
-			
 		#END
 		#START : Delete
 			$markup_article_option_delete = "-->
 			<!--START : Button Delete-->
-		        <div class='buufjs aC c h40' onclick='deletePost(".$article['id'].$IDWWRA.")'>
+		        <div class='buufjs aC c h40 none' onclick='deletePost(".$article['id'].$IDWWRA.")'>
 	        		<!--START : Icon-->
 			            <div class='ac1 p l h40 w16 dg alc'>
 			        		<div class='APPEARANCE_articleL_option_delete_js APPEARANCE_DARK_articleL_option_delete_css ac1icopDel'></div>

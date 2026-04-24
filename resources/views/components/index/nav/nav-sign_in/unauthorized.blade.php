@@ -79,6 +79,11 @@
 								<!--START : Footer-->
 									<div class="t p l w100 mt25 mb25 f12">
 										<!--?php echo $languagesRF1BP[$selectedLanguage]['RF1BP'];?-->
+										<a class='APPEARANCE_footer_text_js APPEARANCE_DARK_footer_text_js hu' href='cookiepolicy.php' target='_blanck'>
+					This site uses cookies.
+				<br>
+					By continuing to browse you agree to the use of cookies in accordance with Regulation (EU) 2016/679
+				</a>
 										<br>
 										<p class="mmftxt mt10 f14">
 											© 2024 Адриан Вэздэуцан
