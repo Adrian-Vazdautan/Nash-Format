@@ -1,4 +1,4 @@
-<?php
+<!--?php
 
 	$getArticles = mysqli_query($connect,"
 		SELECT id, nickname, title, dateofpublication
@@ -9,12 +9,13 @@
 		#START
 			require "time.php";
     	#END
-		echo"
-			<div class='APPEARANCE_loading_js APPEARANCE_DARK_loading_js rWW loading-rowWindowWrapper-".$nextPage." p l bgw pa br12 sh w100 mb25'>
+		echo"-->
+			<!--<div class='APPEARANCE_loading_js APPEARANCE_DARK_loading_js rWW loading-rowWindowWrapper-".$nextPage." p l bgw pa br12 sh w100 mb25'>-->
+			<div class='APPEARANCE_loading_js APPEARANCE_DARK_loading_js rWW loading-rowWindowWrapper- p l bgw pa br12 sh w100 mb25'>
 				<div class='mobile_loading_MATJ_ARTICLE_css mobile_article_title_js w100 p f18 mb20 noneDesk'>ARTICLE</div>
 				<div class='p l w100'>
 					<div class='mobile_loading_roW1_css p l f14 w100 roW1'>
-						<div class='p l u'>";
+						<div class='p l u'><!--";
 							#Get avatar, background, and nickname using ID
 							    $query = mysqli_query($connect, "
 							        SELECT avatar, background, nickname
@@ -28,6 +29,7 @@
 							#Check if image is NOT stored in BD
 							    if($isp_Avatar == ""){
 							    	$Show_Avatar = "<div class='image_avatar_css p l dg alc jcc br50 cw'>".substr($article['nickname'], 0, 1)."</div>";
+							    	--><div class='image_avatar_css p l dg alc jcc br50 cw'>n</div><!--";
 							    } 
 							#Check if image is stored in BD
 								else if($isp_Avatar != "" && $isp_Avatar != NULL){
@@ -45,19 +47,19 @@
 							    }
 							#Show avatar
 							    echo $Show_Avatar;
-							echo "
+							echo "-->
 						</div>
 						<div class='p l ml10'>
-							".$article['nickname']."
+							<!--".$article['nickname']."-->nickname
 						</div>
 						<div class='mobile_loading_date_css p l ml10 cs'>
 							<!--START : Date-->
-								"; echo getTimeAgo($article['dateofpublication']); echo "
+								<!--"; echo getTimeAgo($article['dateofpublication']); echo "-->date
 							<!--END-->
 						</div>
 					</div>
 					<div class='mobile_loading_title_css w100 f24 mt20 p l'>
-						".$article['title']."
+						<!--".$article['title']."-->title
 					</div>
 					<div class='rW5 w100 p l mt20'>
 						<span class='wTD'>
@@ -72,6 +74,6 @@
 					</div>
 				</div>
 			</div>
-		";
+		<!--";
 	}
-?>
+?>-->

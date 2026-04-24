@@ -1,30 +1,30 @@
-<?php
+<!--?php
 #START 000
 $numarul = 0;                               #(Increment). Count of articles
-echo "<!--START : ARTICLES WITH EXTENDED MODE-->";
+echo "<--START : ARTICLES WITH EXTENDED MODE->";
 #START URL : article
 echo "<div class='feed-wrapp-articles-0-item-001'>";
-echo "<!--START : Widget Hide post-->";
-echo "
+echo "<--START : Widget Hide post->";
+echo "-->
     <div class='APPEARANCE_articleRemovedEXTENDED_js APPEARANCE_DARK_articleRemovedEXTENDED_js tosrIDextended tosrjs p l w100 bgw pa sh br12 mb25 mt25 none'>
         <!--START : Hide-->
             <span class='APPEARANCE_article_extended_removed_hide_js APPERANCE_DARK_text_css article_extended_removed_hide_js rw1s p l f14 fw'>
-                ".$languagesArticle[$selectedLanguage]['ArticleRemoved']."
+                <!--".$languagesArticle[$selectedLanguage]['ArticleRemoved']."-->ArticleRemoved
             </span>
             <div class='APPEARANCE_extended_undo_hide_js APPERANCE_DARK_text_css article_extended_undo_hide_js id_undo_appearance_js rw2b c p fw f14' onclick='rw2bUndo_hide_extended()'>
-                ".$languagesArticle[$selectedLanguage]['UNDO']."
+                <!--".$languagesArticle[$selectedLanguage]['UNDO']."-->UNDO
             </div>
         <!--END-->
         <!--START : Delete-->
             <span class='aer_extendedjs rw1s p l f14 fw'>
-                ".$languagesArticle[$selectedLanguage]['articleDeleted']."
+                <!--".$languagesArticle[$selectedLanguage]['articleDeleted']."-->articleDeleted
             </span>
             <div class='aerre_extendedjs id_undo_removed_appearance_js rw2b c p fw f14' onclick='rw2bUndoRemoved_extended()'>
-                ".$languagesArticle[$selectedLanguage]['RECOVER']."
+                <!--".$languagesArticle[$selectedLanguage]['RECOVER']."-->RECOVER
             </div>
-        </div>";
-echo "<!--END-->";
-echo "
+        </div><!--";
+echo "<--END->";
+echo "-->
 <!--START : Hide_post_Complain-->
     <div class='APPEARANCE_hidepostcomplainEXTENDED_js APPEARANCE_DARK_hidepostcomplainEXTENDED_js rWPU_extended_mode_js ab bgw f14 br12 u rwpuIDextended none'>
         <!--START : Button Hide post-->
@@ -36,7 +36,7 @@ echo "
                 <!--END-->
                 <!--START : Title-->
                     <div class='APPEARANCE_articleLTextForbbiden_extended_js APPEARANCE_DARK_articleLTextForbbiden_js p l pal10 h40 lh40 arcm'>
-                        ".$languagesArticle[$selectedLanguage]['HidePost']."
+                        <!--".$languagesArticle[$selectedLanguage]['HidePost']."-->HidePost
                     </div>
                 <!--END-->
             </div>
@@ -50,7 +50,7 @@ echo "
                 <!--END-->
                 <!--START : Title-->
                     <div class='APPEARANCE_articleLreport_extended_js APPEARANCE_DARK_articleLreport_js p l pal10 h40 lh40 arcm'>
-                        ".$languagesArticle[$selectedLanguage]['Complain']."
+                        <!--".$languagesArticle[$selectedLanguage]['Complain']."-->Complain
                     </div>
                 <!--END-->
             </div>
@@ -64,19 +64,19 @@ echo "
                 </div>
                 <div class='p l pal10 h40 lh40 arcm'>
                     <!--START : Title-->
-                        ".$languagesArticle[$selectedLanguage]['Delete']."
+                        <!--".$languagesArticle[$selectedLanguage]['Delete']."-->Delete
                     <!--END-->
                 </div>
             </div>
         <!--END-->
         <!--START : Icon--><div class='pudorWPU ab w20'><div class='APPEARANCE_icon_arrow_articleL_extended_js APPEARANCE_DARK_icon_arrow_articleL_js pudeb ab bgw'><!--icon--></div></div><!--END-->
     </div>
-<!--END-->";
-echo "<div class='APPEARANCE_extended_httpUrlArticle_js APPEARANCE_DARK_extended_httpUrlArticle_js extended_httpUrlArticle_js none mt25 p l pa mb25 bgw sh br12 tosaIDextended'></div>";
+<!--END--><!--";
+echo "--><div class='APPEARANCE_extended_httpUrlArticle_js APPEARANCE_DARK_extended_httpUrlArticle_js extended_httpUrlArticle_js none mt25 p l pa mb25 bgw sh br12 tosaIDextended'></div><!--";
 echo "</div>";
 #END
-echo "<!--END-->";
-echo "<!--START : ARTICLES WITHOUT EXTENDED MODE-->";
-echo "<div class='feed-wrapp-articles-0 p l'>"; #Place where articles will be required
+echo "<--END->";
+echo "--><!--START : ARTICLES WITHOUT EXTENDED MODE--><!--";
+echo "--><div class='feed-wrapp-articles-0 p l'><!--"; #Place where articles will be required
 #END   000
-?>
+?>-->

@@ -1,4 +1,4 @@
-<?php
+<!--?php
     #START : Проверка наличия активной сессии
         require($_SERVER['DOCUMENT_ROOT'] . "/src/path/dt/sy/session_start.php");
     #END
@@ -31,8 +31,9 @@
         $IDWWRA = $_POST['IDWWRA'] ?? "001";
         require "src/languagesArticle.php";
         require "time.php";
-        require "src/options.php";
-    #START 001
+        require "src/options.php";-->
+        @include('components.index.sidebar.sidebar-left.sidebar-home.sidebar-home-articles.src.options')
+    <!--#START 001
             $getArticles     = mysqli_query($connect, "$FNTT_query;");
         #Установка флага по умолчанию в значение "статьи не найдены"
             $articles_found  = false;
@@ -78,8 +79,8 @@
                 #START 001-005
                         $likeStatus = ""; #Initialize the variable
                     #Session : false
-                        if(!isset($_SESSION['user'])){
-                            $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16'><!--liked-0--></div>";
+                        if(!isset($_SESSION['user'])){-->
+                            <!--$likeStatus = "--><div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16'><!--liked-0--></div><!--";
                         } else {
                             #Session : true
                                 $checkLikeStatus  = mysqli_prepare($connect, "SELECT Liked FROM liked WHERE id_of_article = ? AND nickname = ? ORDER BY dateofpublication DESC LIMIT 1");
@@ -88,11 +89,11 @@
                                 $cLS = $checkLikeStatus->get_result()->fetch_row();
 
                                 if($cLS && isset($cLS[0]) && $cLS[0] == 0){
-                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='0'><!--liked-0--></div>";
+                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='0'><--liked-0-></div>";
                                 } elseif($cLS && isset($cLS[0]) && $cLS[0] == 1){
-                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi31 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='1'><!--liked-1--></div>";
+                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi31 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='1'><--liked-1-></div>";
                                 } else {
-                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='0'><!--liked-0--></div>";
+                                    $likeStatus = "<div class='APPEARANCE_cwcpi3_js APPEARANCE_DARK_cwcpi3_js cwcpi3 bgsz16 w16 h16 hdsjsID" . $article['id'] . $IDWWRA . "' data-status='0'><--liked-0-></div>";
                                 }
                         }
                 #END 001-005
@@ -104,8 +105,9 @@
                 #Session : false
                     if(!isset($_SESSION['user'])){
                         #Show without checking
-                            require "articleL.php";
-                    }
+                            require "articleL.php";-->
+                            @include('components.index.sidebar.sidebar-left.sidebar-home.sidebar-home-articles.articleL')
+                    <!--}
                 #Session : true
                     elseif(isset($_SESSION['user'])){
                         #Show with checking
@@ -141,9 +143,10 @@
             #START 002 : Loading. Pagination.
                 #Увеличение номера текущей страницы
                     $nextPage = $page + 1;
-                    require "loading.php";
-            #END   002
+                    require "loading.php";-->
+                    @include('components.index.sidebar.sidebar-left.sidebar-home.sidebar-home-articles.loading')
+            <!--#END   002
         }
 
-    echo "</div><!--END ARTICLES WITHOUT EXTENDED MODE-->";
-?>
+    echo "--></div><!--END ARTICLES WITHOUT EXTENDED MODE--><!--";
+?-->

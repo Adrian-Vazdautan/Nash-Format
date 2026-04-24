@@ -17,7 +17,9 @@
 						@include('components.index.filter.filter-for-articles')
 						<!--echo "--><div class='fFOA'><!--";-->
 							<!--require_once "src/path/dt/ss/index/nav/nav-search/search-result-null.php";-->
+							@include('components.index.nav.nav-search.search-result-null')
 							<!--require_once "src/path/dt/ss/index/sidebar/sidebar-left/sidebar-home/sidebar-home-articles/home.php";-->
+							@include('components.index.sidebar.sidebar-left.sidebar-home.sidebar-home-articles.home')
 						<!--echo "--></div><!--";-->
 					<!--echo "--></div><!--";-->
 				<!--echo "--><!--END--><!--";-->
@@ -28,10 +30,15 @@
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/popular-authors/row-window-best-authors.php";-->
 						@include('components.index.sidebar.sidebar-right.popular-authors.row-window-best-authors')
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/popular-articles/row-window-read-now.php";-->
+						@include('components.index.sidebar.sidebar-right.popular-articles.row-window-read-now')
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/button-post_an_article_for_free/row-add-new-article-wrapper.php";-->
+						@include('components.index.sidebar.sidebar-right.button-post_an_article_for_free.row-add-new-article-wrapper')
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/footer/row-footer-1-bottom-publications.php";-->
+						@include('components.index.sidebar.sidebar-right.footer.row-footer-1-bottom-publications')
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/ad/ad_2.php";-->
+						@include('components.index.sidebar.sidebar-right.ad.ad_2')
 						<!--require_once "src/path/dt/ss/index/sidebar/sidebar-right/ad/ad_3.php";-->
+						@include('components.index.sidebar.sidebar-right.ad.ad_3')
 					<!--echo "</div>";--></div>
 				<!--echo "--><!--END-->
 				</div>

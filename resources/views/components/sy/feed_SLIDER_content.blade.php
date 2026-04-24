@@ -104,7 +104,7 @@
 							                                    }
 						                                    #Check if image is NOT stored in BD
 							                                    if($isp_Avatar == ""){
-							                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->nickname</div><!--";
+							                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->n</div><!--";
 							                                    } 
 						                                    #Check if image is stored in BD
 							                                    else if($isp_Avatar != "" && $isp_Avatar != NULL){
@@ -173,7 +173,7 @@
 																			                                    }
 																		                                    #Check if image is NOT stored in BD
 																			                                    if($isp_Avatar == ""){
-																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->nickname</div><!--";
+																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->n</div><!--";
 																			                                    } 
 																		                                    #Check if image is stored in BD
 																			                                    else if($isp_Avatar != "" && $isp_Avatar != NULL){
@@ -240,7 +240,7 @@
 																			                                    }
 																		                                    #Check if image is NOT stored in BD
 																			                                    if($isp_Avatar == ""){
-																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->nickname</div><!--";
+																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->n</div><!--";
 																			                                    } 
 																		                                    #Check if image is stored in BD
 																			                                    else if($isp_Avatar != "" && $isp_Avatar != NULL){
@@ -307,7 +307,7 @@
 																			                                    }
 																		                                    #Check if image is NOT stored in BD
 																			                                    if($isp_Avatar == ""){
-																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->nickname</div><!--";
+																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->n</div><!--";
 																			                                    } 
 																		                                    #Check if image is stored in BD
 																			                                    else if($isp_Avatar != "" && $isp_Avatar != NULL){
@@ -374,7 +374,7 @@
 																			                                    }
 																		                                    #Check if image is NOT stored in BD
 																			                                    if($isp_Avatar == ""){
-																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->nickname</div><!--";
+																			                                        $Show_Avatar = "--><div class='image_avatar_css p l dg alc jcc br50 cw'><!--".substr($query_DOAF['nickname'], 0, 1)."-->n</div><!--";
 																			                                    } 
 																		                                    #Check if image is stored in BD
 																			                                    else if($isp_Avatar != "" && $isp_Avatar != NULL){
