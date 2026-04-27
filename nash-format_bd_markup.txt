@@ -1,0 +1,149 @@
++	users 
+- id
+- nickname
+- avatar
+- background
+- email
+- password
+- token
+- type
+- choosed_language
+- joined_date
+- notifications_settings
+- 2FA
+- nationality
+- city
+- studies
+- gen
+- Appearance
+
+
+
++	articles 
+- id
+- nickname
+- status 
+- title
+- textarea
+- thumbnail_image 
+- dateofpublication
+- category
+- views 
+- code 
+- textarea100percent
+- thumbnail_description
+- reading_time 
+- allow_notifications
+
+
+
++	hided
+- id_of_article_which_is_hided
+- nickname
+
+
+
++	articles_commentary
+- id 
+- nickname
+- articleAuthor
+- articleTitle
+- artID 
+- commentaryText
+- commentatorID
+- dateofpublication
+- type_of_comment
+
+
+
++	liked
+- id_of_article
+- Liked
+- nickname
+- dateofpublication
+
+
+
++	history
+- id_of_article
+- nickname
+- status
+
+
+
++	chat
+- id
+- nickname
+- message
+
+
+
++	complaints
+- nickname 
+- id_of_article
+- message
+
+
+
++	history
+- nickname
+- id_of_article
+- status
+
+
+
++	like_for_commentary_from_article
+- nickname
+- likeZeroOrOne
+- id_of_commentary
+- type_of_comment
+
+
+
+
++	notifications
+- nickname
+- status
+- author_of_article
+- type 
+- nickname_id
+- id_of_article
+- dateofpublication
+
+
+
++	recommended
+- nickname
+
+
+
++	star
+- id
+- id_of_article
+
+
+
++	recommended
+- id
+- id_of_article
+
++	recover
+- email
+- hash
+- dateofpublication
+- status
+
+
+
++	articles100percent
+- id
+- code
+- nickname
+- category
+- title
+- textarea
+- reading_time
+- thumbnail_description
+- thumbnail_image
+- allow_notifications
+- status
