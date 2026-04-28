@@ -2,7 +2,7 @@
 	<div class="btn_home_js c APPEARANCE_DARK_btn_HOME_js APPEARANCE_DARK__HOVER__btn_sidebar_js" onclick="goToFeed()">
 		<div class="btn_home_ICON_js APPEARANCE_DARK_btn_home_ICON_js"><!--ICON--></div>
 		<div class="btn_home_TITLE_js APPEARANCE_DARK_btn_home_TITLE_js">
-			<!--?php echo $languagesSidebarLeft[$selectedLanguage]['Home'];?-->Home
+			{{ __('russian.Home') }}
 		</div>
 	</div>
 <!--END-->
