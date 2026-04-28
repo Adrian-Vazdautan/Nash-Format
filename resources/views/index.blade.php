@@ -53,7 +53,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Наш Формат</title>
 	<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="{{ asset('js/jquery-4.0.0.min.js') }}"></script>
+	<script defer src="{{ asset('js/main.js') }}"></script>
 </head>
 <body class="APPEARANCE_body_js overflowjs DARK_THEME_COLOR_2">
 	<!--START : Preloader-->
