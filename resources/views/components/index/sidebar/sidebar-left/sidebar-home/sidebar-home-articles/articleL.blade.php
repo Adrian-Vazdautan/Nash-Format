@@ -316,7 +316,7 @@
 					<!--END-->
 					<!--START : Button Share-->
 						<!--<div class='APPEARANCE_share_js APPEARANCE_DARK_cls_js tfccb1 u p l c ml15 pa10 br12 cwcp1share".$article['id'].$IDWWRA."' onclick='share_this(".$article['id'].")' title='".$languagesArticle[$selectedLanguage]['Share']."'>-->
-						<div class='APPEARANCE_share_js APPEARANCE_DARK_cls_js tfccb1 u p l c ml15 pa10 br12 cwcp1share' onclick='share_this(".$article['id'].")' title=''>
+						<div class='APPEARANCE_share_js APPEARANCE_DARK_cls_js tfccb1 u p l c ml15 pa10 br12 cwcp1share' onclick='share_this()' title=''>
 							<div class='APPEARANCE_cwcpi4_js APPEARANCE_DARK_cwcpi4_js cwcpi4 p l w16 h16 bgsz16'><!--icon--></div>
 							<div class='h16 lh16 p l ml10 f14'>
 								<!--".$languagesArticle[$selectedLanguage]['Share']."-->Share

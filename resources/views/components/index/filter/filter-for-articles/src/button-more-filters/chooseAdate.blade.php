@@ -56,7 +56,7 @@
 						</div>
 						<div class="cadn6 p l w100 mt10 mobile_width_340">
 							<input type="date" class="APPEARANCE_calendar_input_FROM_js APPEARANCE_calendar_input_FROM_UPTO_css cadn61 cadn611js daceljs p l f14 br4 pal10" value="2019-10-01" onclick="sifcad(0)" onchange="daceljsELC()" title="Date">
-							<input type="date" class="APPEARANCE_calendar_input_UPTO_js APPEARANCE_calendar_input_FROM_UPTO_css cadn62 cadn612js daceljs p l ml20 pal10 f14 br4 checkedBluejs" value="" onclick="sifcad(1)" title='Date' onchange="daceljsELC()">
+							<input type="date" class="APPEARANCE_calendar_input_UPTO_js APPEARANCE_calendar_input_FROM_UPTO_css cadn62 cadn612js daceljs p l ml20 pal10 f14 br4 checkedBluejs" value="{{ now()->format('Y-m-d') }}" onclick="sifcad(1)" title='Date' onchange="daceljsELC()">
 						</div>
 						<div class="cadn7 p l w100 mt20 mb20 mobile_width_340">
 							<div class="APPEARANCE_calendar_move_left_js APPERANCE_DARK_text_css cadn71 p l dg alc jcc" onclick="swcalda(0)">
