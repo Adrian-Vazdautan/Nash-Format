@@ -1,0 +1,10 @@
+services:
+  db-nash-format:
+    image: mysql:8.0
+    container_name: nashformat-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: nash_format_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306" # МЕНЯЕМ ПОРТ! 3306 уже занят LavaBank
