@@ -15,7 +15,7 @@ export default function App() {
       <Routes>
         {/* 1. Полноэкранные страницы */}
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/SignUp" element={<RegisterPage />} />
         <Route path="/recovery" element={<RecoveryPage />} />
 
         {/* 2. Страницы внутри общей раскладки (с шапкой и сайдбаром) */}
