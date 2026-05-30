@@ -5,7 +5,7 @@ namespace App\Http\Controllers\nav\sign_in\authorization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class login_2 extends Controller
+class autch_page extends Controller
 {
     //
 }
