@@ -1,61 +1,34 @@
-import { Paper, Box, Flex, Container, Title, Text, Button } from '@mantine/core';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import { TopSlider } from './components/Main/TopSlider';
-import { FeedFilters } from './components/Main/FeedFilters';
-import { PostCard } from './components/Main/PostCard';
-import { ArticleLoading } from './components/Main/ArticleLoading';
-import { RightSection } from './components/Main/RightSection';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { MainLayout } from './layouts/MainLayout';
+
+// Импортируем файлы, которые лежат в корне src/pages/
+import { AuthPage } from './pages/AuthPage/';
+import { FeedPage } from './pages/Feed/';
+import { RegisterPage } from './pages/Registration/';
+import { RecoveryPage } from './pages/Recovery/';
+import { EditorPage } from './pages/Editor/';
+import { ProfilePage } from './pages/Profile/';
 
 export default function App() {
-  const isLoading = false; // Поменяй на true, чтобы увидеть анимацию загрузки
-
   return (
-    <Box h="100vh" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', backgroundColor: '#f1f5f9' }}>
-      <Header />
-      <Flex style={{ flex: 1, overflow: 'hidden' }}>
-        <Sidebar />
-        <Box component="main" style={{ flex: 1, overflowY: 'auto', padding: '24px 0' }}>
-          <Container size="xl" w="100%" px="md">
-            <Flex gap="xl" align="flex-start">
-              
-              {/* ЛЕНТА */}
-              <Box style={{ flex: 1, minWidth: 0 }}>
-                <TopSlider />
-                <FeedFilters />
-                
-                {/* Блок НОВОСТИ */}
-                <Paper p="xl" radius="lg" withBorder mb="xl" bg="white" pos="relative">
-                   <Title order={2} c="dark">НОВОСТИ</Title>
-                   <Text c="dimmed" size="xs">date</Text>
-                   <Box h={2} bg="red" w={50} my="md" />
-                   <Text size="sm" mb="xl">thumbnail_description новости...</Text>
-                   <Button variant="subtle" color="blue" p={0}>Показать больше</Button>
-                </Paper>
+    <BrowserRouter>
+      <Routes>
+        {/* 1. Полноэкранные страницы */}
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/recovery" element={<RecoveryPage />} />
 
-                {/* ПОСТЫ или СКЕЛЕТОН */}
-                {isLoading ? (
-                  <>
-                    <ArticleLoading />
-                    <ArticleLoading />
-                  </>
-                ) : (
-                  <>
-                    <PostCard />
-                    <PostCard />
-                  </>
-                )}
-              </Box>
+        {/* 2. Страницы внутри общей раскладки (с шапкой и сайдбаром) */}
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Navigate to="/feed" replace />} />
+          <Route path="feed" element={<FeedPage />} />
+          <Route path="editor" element={<EditorPage />} />
+          <Route path="profile" element={<ProfilePage />} />
+        </Route>
 
-              {/* ПРАВАЯ ЧАСТЬ */}
-              <Box w={320} style={{ flexShrink: 0 }}>
-                <RightSection />
-              </Box>
-
-            </Flex>
-          </Container>
-        </Box>
-      </Flex>
-    </Box>
+        {/* 3. Хэндлер для кривых ссылок */}
+        <Route path="*" element={<Navigate to="/feed" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
