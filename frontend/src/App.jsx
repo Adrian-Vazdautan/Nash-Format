@@ -1,11 +1,11 @@
 import { Paper, Box, Flex, Container, Title, Text, Button } from '@mantine/core';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import { TopSlider } from './components/Main/TopSlider/TopSlider';
-import { FeedFilters } from './components/Main/FeedFilters/FeedFilters';
-import { PostCard } from './components/Main/PostCard/PostCard';
-import { ArticleLoading } from './components/Main/ArticleLoading/ArticleLoading';
-import { RightSection } from './components/Main/RightSection/RightSection';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import { TopSlider } from './components/Main/TopSlider';
+import { FeedFilters } from './components/Main/FeedFilters';
+import { PostCard } from './components/Main/PostCard';
+import { ArticleLoading } from './components/Main/ArticleLoading';
+import { RightSection } from './components/Main/RightSection';
 
 export default function App() {
   const isLoading = false; // Поменяй на true, чтобы увидеть анимацию загрузки
