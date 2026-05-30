@@ -1,7 +1,8 @@
 import { Paper, TextInput, Button, Title, Text, Container, Box, Stack } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export function RecoveryPage() {
+  const navigate = useNavigate();
   return (
     <Box style={{ width: '100vw', height: '100vh', backgroundColor: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Container size={420} w="100%">
