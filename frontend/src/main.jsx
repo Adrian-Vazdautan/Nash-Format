@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-// 1. Обязательно импортируем стили на самом верху
-import '@mantine/core/styles.css'; 
-
-// 2. Импортируем сам провайдер
+import App from './App.jsx'; // Импортируем наш настроенный App
 import { MantineProvider } from '@mantine/core';
-import App from './App.jsx';
+import '@mantine/core/styles.css'; // Не забываем про стили Mantine
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* 3. Оборачиваем App в MantineProvider */}
     <MantineProvider>
       <App />
     </MantineProvider>

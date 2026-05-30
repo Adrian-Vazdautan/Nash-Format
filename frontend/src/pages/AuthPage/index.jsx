@@ -10,7 +10,8 @@ import {
   Container, 
   Group, 
   Box,
-  Center
+  Center,
+  Stack
 } from '@mantine/core';
 
 export function AuthPage() {

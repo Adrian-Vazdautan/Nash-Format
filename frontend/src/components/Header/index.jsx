@@ -1,7 +1,9 @@
 import { Group, TextInput, Button, UnstyledButton, Menu, rem } from '@mantine/core';
 import { IconSearch, IconChevronDown } from '@tabler/icons-react';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <Group 
       h={60} 
@@ -86,7 +88,7 @@ export default function Header() {
               }
             }
           }}
-        >
+        component={Link} to="/auth">
           Заходи
         </Button>
       </Group>
