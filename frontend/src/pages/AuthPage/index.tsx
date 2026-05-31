@@ -15,11 +15,14 @@ import {
 } from '@mantine/core';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useAuth } from '../../context/AuthContext'; // Убедись, что путь к контексту верный
 
 export function AuthPage() {
   const navigate = useNavigate();
-  const [login, setLogin] = useState('');
+  // Переименовали состояние, чтобы избежать конфликта имен
+  const [loginInput, setLoginInput] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth(); // Функция из контекста
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,14 +34,16 @@ export function AuthPage() {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify({ login, password }),
+        body: JSON.stringify({ login: loginInput, password }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message); // "Авторизация удалась!"
-        navigate('/'); // Переход на главную после успеха
+        // Вызываем функцию из контекста — она сама сохранит токен 
+        // и обновит состояние, что заставит приложение перерисоваться
+        login(data.access_token);
+        navigate('/'); 
       } else {
         alert(data.message || 'Ошибка авторизации');
       }
@@ -85,8 +90,8 @@ export function AuthPage() {
                 required 
                 size="sm"
                 radius="md"
-                value={login}
-                onChange={(e) => setLogin(e.target.value)}
+                value={loginInput}
+                onChange={(e) => setLoginInput(e.target.value)}
               />
 
               <PasswordInput 
