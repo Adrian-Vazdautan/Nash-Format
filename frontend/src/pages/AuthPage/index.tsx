@@ -15,7 +15,7 @@ import {
 } from '@mantine/core';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext'; // Убедись, что путь к контексту верный
+import { useAuth } from '../../context/AuthContext';
 
 export function AuthPage() {
   const navigate = useNavigate();

@@ -16,7 +16,7 @@ export default function Header() {
       wrap="nowrap"
       style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}
     >
-      <Group gap="xs" wrap="nowrap">
+      <Group gap="xs" wrap="nowrap" component={Link} to="/feed">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#3b82f6" />
           <path d="M2 17L12 22V12L2 7V17Z" fill="#2563eb" />
