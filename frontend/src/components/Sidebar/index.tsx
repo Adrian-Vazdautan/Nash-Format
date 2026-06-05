@@ -118,7 +118,7 @@ export default function Sidebar() {
           <NavLink label="Приватность 😂" component={Link} to="/privacy" leftSection={<IconShieldLock size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Реклама" component={Link} to="/advertising" leftSection={<IconSpeakerphone size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Помощь" component={Link} to="/help" leftSection={<IconHelpCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
-          <NavLink label="Оставить отзыв" leftSection={<IconMailOpened size={20} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="Оставить отзыв" component={Link} to="/feedback" leftSection={<IconMailOpened size={20} stroke={1.5} />} styles={navLinkStyles} />
 
           {/* Текст куки */}
           <Box px="md" py="xl" mt="auto">
