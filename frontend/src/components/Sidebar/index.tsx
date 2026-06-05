@@ -44,7 +44,7 @@ export default function Sidebar() {
         <Stack gap={0} p="xs" style={{ minHeight: '100%' }}>
           
           {/* ГЛАВНОЕ МЕНЮ */}
-          <NavLink label="Домой" leftSection={<IconHome size={22} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="Домой" component={Link} to="/feed" leftSection={<IconHome size={22} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Лайки" leftSection={<IconHeart size={22} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="История" leftSection={<IconHistory size={22} stroke={1.5} />} styles={navLinkStyles} />
 
@@ -120,6 +120,8 @@ export default function Sidebar() {
           <NavLink label="Помощь" component={Link} to="/help" leftSection={<IconHelpCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Оставить отзыв" component={Link} to="/feedback" leftSection={<IconMailOpened size={20} stroke={1.5} />} styles={navLinkStyles} />
 
+          <Divider my="sm" color="#e2e8f0" />
+          
           {/* Текст куки */}
           <Box px="md" py="xl" mt="auto">
             <Text size="xs" c="dimmed" style={{ lineHeight: 1.6 }}>

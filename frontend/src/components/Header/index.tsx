@@ -59,10 +59,10 @@ export default function Header() {
           input: { backgroundColor: '#ffffff', border: 'none', paddingRight: rem(40) },
           section: { 
             borderLeft: '1px solid #e2e8f0', 
-            height: '100%', 
+            height: '35px', 
             backgroundColor: '#f8fafc',
-            borderTopRightRadius: rem(32),
-            borderBottomRightRadius: rem(32),
+            borderTopRightRadius: '50%',
+            borderBottomRightRadius: '50%',
           }
         }}
       />
