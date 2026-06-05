@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { UserActions } from './UserActions';
 import { useState } from 'react';
+import './MobileHeader.css';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <Box 
+    <Box className="header-box" 
       h={70} 
       px="xl" 
       bg="rgba(255, 255, 255, 0.8)" 
@@ -33,7 +34,7 @@ export default function Header() {
       {/* Лого */}
       <Group component={Link} to="/feed" style={{ textDecoration: 'none' }}>
         <span style={{ color: '#000', fontWeight: 900, fontSize: '1.4rem', letterSpacing: '-1px' }}>
-          HASH.FORMAT
+          НАШ.ФОРМАТ
         </span>
       </Group>
 

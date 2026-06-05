@@ -1,0 +1,34 @@
+@media (max-width: 768px) {
+  .header-box {
+    display: grid !important;
+    /* Сетка: Лого (слева) | Поиск (центр) | Действия (справа) */
+    grid-template-columns: auto 1fr auto !important;
+    grid-template-rows: 1fr !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+    height: 64px !important;
+  }
+
+  /* Логотип */
+  .header-box > a:first-child {
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+  }
+
+  /* Поиск: занимает свободное пространство */
+  .header-box > .mantine-TextInput-root {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Правая группа действий */
+  .header-box > .mantine-Group-root:last-of-type {
+    gap: 4px !important;
+  }
+
+  /* Кнопки: скрываем текст на очень маленьких экранах, оставляем иконки */
+  .mantine-Button-root {
+    padding: 0 10px !important;
+    font-size: 0.75rem !important;
+  }
+}
