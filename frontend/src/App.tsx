@@ -15,6 +15,7 @@ import { PrivacyPage } from './pages/Privacy/';
 import { AdvertisementPage } from './pages/Advertising/';
 import { HelpPage } from './pages/Help/';
 import { FeedbackPage } from './pages/Feedback/';
+import { SearchPage } from './pages/Search/';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Navigate to="/feed" replace />} />
           <Route path="feed" element={<FeedPage />} />
+          <Route path="search" element={<SearchPage />} />
           <Route path="editor" element={<EditorPage />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="about" element={<AboutPage />} />
