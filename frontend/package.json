@@ -12,7 +12,12 @@
   "dependencies": {
     "@mantine/core": "^9.2.2",
     "@mantine/hooks": "^9.2.2",
+    "@mantine/tiptap": "^9.3.0",
     "@tabler/icons-react": "^3.44.0",
+    "@tiptap/extension-image": "^3.26.0",
+    "@tiptap/pm": "^3.26.0",
+    "@tiptap/react": "^3.26.0",
+    "@tiptap/starter-kit": "^3.26.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.16.0"
