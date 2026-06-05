@@ -1,44 +1,96 @@
-import { Container, Title, Text, Stack, Paper, Loader, Center, Flex, Box } from '@mantine/core';
-import { useSearchParams } from 'react-router-dom';
+import { 
+  Container, Title, Text, Stack, Paper, Loader, Center, Flex, Box, 
+  Group, ThemeIcon, ActionIcon, Highlight, Button, Select, Divider 
+} from '@mantine/core';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { 
+  IconSearch, IconFileText, IconArrowRight, IconMoodSadSquint, 
+  IconSparkles, IconFilter, IconPlus 
+} from '@tabler/icons-react';
 import { RightSection } from '../../components/Main/RightSection/';
 
-// Это примерный компонент для отображения результатов
 export function SearchPage() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const query = searchParams.get('q') || '';
-
-  // В реальном приложении здесь будет логика запроса к API
+  
   const loading = false; 
-  const results = []; // Сюда придут данные из твоего поиска
+  const results = []; // Если сюда добавить данные, отобразятся результаты
 
-return (
-    <Flex gap="md" align="flex-start" wrap="nowrap">
-      <Box style={{ flex: 1, minWidth: 0 }}>
-        <Stack gap="md">
-          <Title order={2}>Результаты поиска по запросу: "{query}"</Title>
+  return (
+    <Container size={1200} py="xl">
+      <Flex gap="xl" align="flex-start" wrap="nowrap">
+        
+        {/* Основная часть контента */}
+        <Box style={{ flex: 1, minWidth: 0 }}>
+          <Stack gap="lg">
+            <Group justify="space-between">
+              <Box>
+                <Title order={2}>Поиск</Title>
+                <Text size="sm" c="dimmed">Результаты по запросу: "{query}"</Text>
+              </Box>
+              
+              {/* Фильтры */}
+              <Group gap="xs">
+                <Select
+                  placeholder="Фильтр"
+                  data={['Все', 'Статьи', 'Авторы']}
+                  leftSection={<IconFilter size={14} />}
+                  w={150}
+                />
+              </Group>
+            </Group>
 
-          {loading ? (
-            <Center py="xl">
-              <Loader />
-            </Center>
-          ) : results.length > 0 ? (
-            results.map((item, index) => (
-              <Paper key={index} withBorder p="md" shadow="sm">
-                <Title order={3}>{item.title}</Title>
-                <Text c="dimmed">{item.description}</Text>
+            <Divider />
+
+            {loading ? (
+              <Center py={100}><Loader type="dots" size="xl" /></Center>
+            ) : results.length > 0 ? (
+              <Stack gap="md">
+                {results.map((item: any, index: number) => (
+                  <Paper key={index} withBorder p="md" radius="lg">
+                    <Text fw={700}>{item.title}</Text>
+                  </Paper>
+                ))}
+              </Stack>
+            ) : (
+              /* Состояние: пусто */
+              <Paper p={60} radius="xl" withBorder bg="var(--mantine-color-gray-0)" style={{ textAlign: 'center', position: 'relative' }}>
+                <Box style={{ position: 'absolute', top: 20, right: 20, opacity: 0.2 }}>
+                  <IconSparkles size={100} />
+                </Box>
+                
+                <Stack align="center" gap="md">
+                  <ThemeIcon size={80} radius={100} variant="light" color="gray">
+                    <IconMoodSadSquint size={40} />
+                  </ThemeIcon>
+                  <Box>
+                    <Title order={3}>Ничего не нашлось</Title>
+                    <Text c="dimmed">Мы не нашли публикаций по вашему запросу.</Text>
+                  </Box>
+                  
+                  <Group mt="md">
+                    <Button variant="default" onClick={() => navigate('/')}>На главную</Button>
+                    <Button 
+                      leftSection={<IconPlus size={18} />}
+                      variant="gradient" 
+                      gradient={{ from: 'blue', to: 'cyan' }}
+                      onClick={() => navigate('/editor')}
+                    >
+                      Создать свою статью
+                    </Button>
+                  </Group>
+                </Stack>
               </Paper>
-            ))
-          ) : (
-            <Paper withBorder p="xl" ta="center">
-              <Text>По вашему запросу ничего не найдено.</Text>
-              <Text size="sm" c="dimmed">Попробуйте изменить формулировку поиска.</Text>
-            </Paper>
-          )}
-        </Stack>
-      </Box>
-      <Box w={280} style={{ flexShrink: 0 }}>
-        <RightSection />
-      </Box>
-    </Flex>
+            )}
+          </Stack>
+        </Box>
+
+        {/* Правая колонка */}
+        <Box w={300} style={{ flexShrink: 0 }}>
+          <RightSection />
+        </Box>
+      </Flex>
+    </Container>
   );
 }
