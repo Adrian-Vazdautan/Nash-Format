@@ -114,8 +114,8 @@ export default function Sidebar() {
           <Text size="xs" fw={700} color="dimmed" px="sm" mb="xs">РЕСУРСЫ</Text>
           <NavLink label="О сайте" component={Link} to="/about" leftSection={<IconInfoCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Правила" component={Link} to="/rules" leftSection={<IconFileText size={20} stroke={1.5} />} styles={navLinkStyles} />
-          <NavLink label="Авторские права" component={Link} to="/copyright"  leftSection={<IconCopyright size={20} stroke={1.5} />} styles={navLinkStyles} />
-          <NavLink label="Приватность 😂" leftSection={<IconShieldLock size={20} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="Авторские права" component={Link} to="/copyright" leftSection={<IconCopyright size={20} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="Приватность 😂" component={Link} to="/privacy" leftSection={<IconShieldLock size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Реклама" leftSection={<IconSpeakerphone size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Помощь" leftSection={<IconHelpCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Оставить отзыв" leftSection={<IconMailOpened size={20} stroke={1.5} />} styles={navLinkStyles} />
