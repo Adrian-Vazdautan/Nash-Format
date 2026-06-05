@@ -1,52 +1,104 @@
-import { Paper, Text, Group, ActionIcon, Box, Avatar, rem } from '@mantine/core';
+import { useRef, useState, useEffect } from 'react';
+import { Paper, Text, Group, ActionIcon, Avatar, Box, Stack } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export function TopSlider() {
-  const cards = [1, 2, 3, 4].map((i) => (
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Проверка позиции для показа/скрытия кнопок
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
+    }
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      // Листаем на ширину карточки (240px) + gap (20px)
+      const scrollAmount = 260; 
+      scrollRef.current.scrollBy({ 
+        left: direction === 'left' ? -scrollAmount : scrollAmount, 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
+  const cards = Array.from({ length: 10 }).map((_, i) => (
     <Paper
       key={i}
-      shadow="md"
-      p="xl"
-      radius="lg"
-      h={280}
-      w={220}
+      radius="xl"
+      h={340}
+      w={260}
       style={{
+        flexShrink: 0,
         backgroundSize: 'cover',
-        backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%), url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop)',
+        backgroundPosition: 'center',
+        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.9) 100%), url(https://picsum.photos/400/600?random=${i})`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        position: 'relative'
+        padding: '24px',
+        transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
+        cursor: 'pointer',
+        border: '1px solid rgba(255,255,255,0.1)',
+        '&:hover': { transform: 'translateY(-10px) scale(1.02)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }
       }}
     >
-      <Box>
-        <Text c="white" fw={700} size="xl" lh={1.2}>title</Text>
-        <Text c="dimmed" size="xs" mb="xs">text</Text>
+      <Stack gap="sm">
+        <Text c="white" fw={800} size="xl" lh={1.2}>React 2026: Будущее здесь #{i + 1}</Text>
         <Group gap="xs">
-          <Avatar size={18} radius="xl" />
-          <Text size="xs" c="white">nickname</Text>
+          <Avatar size={28} src={`https://i.pravatar.cc/150?u=${i}`} radius="xl" />
+          <Text size="sm" c="gray.1" fw={500}>Иван Иванов</Text>
         </Group>
-      </Box>
+      </Stack>
     </Paper>
   ));
 
   return (
-    <Box pos="relative">
-      <Group wrap="nowrap" gap="md" style={{ overflow: 'hidden' }}>
+    <Box pos="relative" py={0}>
+      {/* Контейнер скролла */}
+      <Box 
+        ref={scrollRef}
+        onScroll={checkScroll}
+        style={{ 
+          display: 'flex', 
+          gap: '24px', 
+          overflowX: 'auto', 
+          scrollbarWidth: 'none'
+        }}
+      >
         {cards}
-      </Group>
+      </Box>
+
+      {/* Кнопки с умным отображением */}
+      <ActionIcon 
+        onClick={() => scroll('left')} 
+        pos="absolute" left={10} top="50%" size={50} radius="xl" variant="white" 
+        style={{ 
+          boxShadow: '0 8px 20px rgba(0,0,0,0.2)', 
+          opacity: canScrollLeft ? 1 : 0, 
+          transition: '0.3s',
+          zIndex: 10 
+        }}
+      >
+        <IconChevronLeft size={28} />
+      </ActionIcon>
       
       <ActionIcon 
-        variant="filled" 
-        color="dark" 
-        radius="xl" 
-        size="lg"
-        pos="absolute" 
-        right={-15} 
-        top="45%"
-        style={{ zIndex: 2, boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}
+        onClick={() => scroll('right')} 
+        pos="absolute" right={10} top="50%" size={50} radius="xl" variant="white" 
+        style={{ 
+          boxShadow: '0 8px 20px rgba(0,0,0,0.2)', 
+          opacity: canScrollRight ? 1 : 0, 
+          transition: '0.3s',
+          zIndex: 10 
+        }}
       >
-        <IconChevronRight size={20} />
+        <IconChevronRight size={28} />
       </ActionIcon>
     </Box>
   );
