@@ -8,6 +8,7 @@ import { RegisterPage } from './pages/Registration/';
 import { RecoveryPage } from './pages/Recovery/';
 import { EditorPage } from './pages/Editor/';
 import { ProfilePage } from './pages/Profile/';
+import { AboutPage } from './pages/about/';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="feed" element={<FeedPage />} />
           <Route path="editor" element={<EditorPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="about" element={<AboutPage />} />
         </Route>
 
         {/* 3. Хэндлер для кривых ссылок */}

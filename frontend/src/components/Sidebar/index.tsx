@@ -5,6 +5,7 @@ import {
   IconCopyright, IconShieldLock, IconSpeakerphone, IconHelpCircle, 
   IconMailOpened 
 } from '@tabler/icons-react';
+import { useNavigate, Link } from 'react-router-dom';
 
 // Вспомогательный компонент для строк в разделе "Темы"
 function TopicItem({ letter, icon, label }) {
@@ -29,6 +30,7 @@ function TopicItem({ letter, icon, label }) {
 }
 
 export default function Sidebar() {
+  const navigate = useNavigate();
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
@@ -110,7 +112,7 @@ export default function Sidebar() {
 
           {/* РЕСУРСЫ */}
           <Text size="xs" fw={700} color="dimmed" px="sm" mb="xs">РЕСУРСЫ</Text>
-          <NavLink label="О сайте" leftSection={<IconInfoCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="О сайте" component={Link} to="/about" leftSection={<IconInfoCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Правила" leftSection={<IconFileText size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Авторские права" leftSection={<IconCopyright size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Приватность 😂" leftSection={<IconShieldLock size={20} stroke={1.5} />} styles={navLinkStyles} />
@@ -127,7 +129,7 @@ export default function Sidebar() {
               with Regulation (EU) 2016/679
             </Text>
             <Text size="xs" c="dimmed" mt="md" fw={500}>
-              © 2024 Адриан Вздульцан
+              © 2024 Адриан Вздэуцан
             </Text>
           </Box>
         </Stack>
