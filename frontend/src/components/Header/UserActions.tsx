@@ -32,19 +32,7 @@ export function UserActions() {
         </Menu.Dropdown>
       </Menu>
 
-      {/* 3. Кнопка уведомлений с окошком */}
-      <Popover width={200} position="bottom" withArrow shadow="md">
-        <Popover.Target>
-          <ActionIcon variant="transparent" color="white">
-            <Indicator color="red" size={8} processing>
-              <IconBell size={24} />
-            </Indicator>
-          </ActionIcon>
-        </Popover.Target>
-        <Popover.Dropdown>
-          <Text size="sm">Уведомлений пока нет</Text>
-        </Popover.Dropdown>
-      </Popover>
+      
       
     </div>
   );
