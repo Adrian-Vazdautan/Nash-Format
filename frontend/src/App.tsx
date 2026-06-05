@@ -13,6 +13,7 @@ import { TermsPage } from './pages/Rules/';
 import { CopyrightPage } from './pages/Copyright/';
 import { PrivacyPage } from './pages/Privacy/';
 import { AdvertisementPage } from './pages/Advertising/';
+import { HelpPage } from './pages/Help/';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="copyright" element={<CopyrightPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="advertising" element={<AdvertisementPage />} />
+          <Route path="help" element={<HelpPage />} />
         </Route>
 
         {/* 3. Хэндлер для кривых ссылок */}

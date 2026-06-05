@@ -117,7 +117,7 @@ export default function Sidebar() {
           <NavLink label="Авторские права" component={Link} to="/copyright" leftSection={<IconCopyright size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Приватность 😂" component={Link} to="/privacy" leftSection={<IconShieldLock size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Реклама" component={Link} to="/advertising" leftSection={<IconSpeakerphone size={20} stroke={1.5} />} styles={navLinkStyles} />
-          <NavLink label="Помощь" leftSection={<IconHelpCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
+          <NavLink label="Помощь" component={Link} to="/help" leftSection={<IconHelpCircle size={20} stroke={1.5} />} styles={navLinkStyles} />
           <NavLink label="Оставить отзыв" leftSection={<IconMailOpened size={20} stroke={1.5} />} styles={navLinkStyles} />
 
           {/* Текст куки */}
