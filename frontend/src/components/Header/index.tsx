@@ -1,12 +1,21 @@
-import { Group, TextInput, Button, UnstyledButton, Menu, rem } from '@mantine/core';
+import { Group, TextInput, Button, UnstyledButton, Menu, rem, ActionIcon } from '@mantine/core';
 import { IconSearch, IconChevronDown } from '@tabler/icons-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { UserActions } from './UserActions';
+import { useState } from 'react';
 
 export default function Header() {
   const navigate = useNavigate();
   const { isAuthenticated, logout } = useAuth();
+  const [value, setValue] = useState(''); // Добавили состояние
+
+  const handleSearch = () => {
+    if (value.trim()) {
+      navigate(`/search?q=${value}`);
+    }
+  };
+
   return (
     <Group 
       h={60} 
@@ -33,20 +42,24 @@ export default function Header() {
         placeholder="Поиск"
         size="sm"
         radius="xl"
+        value={value}
+        onChange={(e) => setValue(e.currentTarget.value)}
+        onKeyDown={(e) => e.key === 'Enter' && handleSearch()} // Поиск по нажатию Enter
         w={{ base: 200, sm: 400, md: 500 }}
         rightSection={
-          <IconSearch style={{ width: rem(16), height: rem(16), color: '#888' }} stroke={1.5} />
+          <ActionIcon 
+            variant="transparent" 
+            component={Link} to="/search"
+            style={{ width: '100%', height: '100%', cursor: 'pointer' }}
+          >
+            <IconSearch style={{ width: rem(16), height: rem(16), color: '#888' }} stroke={1.5} />
+          </ActionIcon>
         }
         styles={{
-          input: {
-            backgroundColor: '#ffffff',
-            border: 'none',
-            paddingRight: rem(40),
-          },
-          section: {
-            borderLeft: '1px solid #e2e8f0',
-            height: '100%',
-            paddingLeft: rem(10),
+          input: { backgroundColor: '#ffffff', border: 'none', paddingRight: rem(40) },
+          section: { 
+            borderLeft: '1px solid #e2e8f0', 
+            height: '100%', 
             backgroundColor: '#f8fafc',
             borderTopRightRadius: rem(32),
             borderBottomRightRadius: rem(32),
