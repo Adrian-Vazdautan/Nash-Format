@@ -1,5 +1,5 @@
 import { Group, TextInput, Button, UnstyledButton, Menu, rem, Box, ActionIcon, Indicator } from '@mantine/core';
-import { IconSearch, IconChevronDown, IconBell } from '@tabler/icons-react';
+import { IconSearch, IconChevronDown, IconBell, IconMenu2, IconUserCircle } from '@tabler/icons-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { UserActions } from './UserActions';
@@ -33,6 +33,13 @@ export default function Header() {
     >
       {/* Лого */}
       <Group component={Link} to="/feed" style={{ textDecoration: 'none' }}>
+        <ActionIcon 
+          className="mobile-only" // Появится только на мобилке
+          variant="subtle" 
+          color="black"
+        >
+          <IconMenu2 size={24} />
+        </ActionIcon>
         <span style={{ color: '#000', fontWeight: 900, fontSize: '1.4rem', letterSpacing: '-1px' }}>
           НАШ.ФОРМАТ
         </span>
@@ -75,8 +82,8 @@ export default function Header() {
               </Menu.Dropdown>
             </Menu>
 
-            <Button variant="subtle" c="black" radius="lg" component={Link} to="/auth">Войти</Button>
-            <Button variant="filled" bg="black" radius="lg" component={Link} to="/register">Регистрация</Button>
+            <Button className="hide-text-mobile" variant="subtle" c="black" radius="lg" component={Link} to="/auth">Войти</Button>
+            <Button className="hide-text-mobile" variant="filled" bg="black" radius="lg" component={Link} to="/register">Регистрация</Button>
           </Group>
         )}
         {isAuthenticated && (
@@ -87,6 +94,9 @@ export default function Header() {
           </Indicator>
         )}
       </Group>
+      <ActionIcon variant="filled" color="black" size="lg" radius="lg">
+        <IconUserCircle size={20} />
+      </ActionIcon>
     </Box>
   );
 }
