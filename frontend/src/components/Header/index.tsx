@@ -32,7 +32,7 @@ export default function Header() {
       }}
     >
       {/* Лого */}
-      <div className='media_btn_title' style={{ marginLeft: '-15px' }}>
+      <div className='media_btn_title'>
         <Group component={Link} to="/feed" style={{ textDecoration: 'none' }}>
           <ActionIcon 
             className="mobile-only" // Появится только на мобилке

@@ -4,7 +4,7 @@
 }
 
 .media_btn_title{
-  margin-left: 0px;
+  margin-left: -9.4px;
 }
 
 .floatLeft{
@@ -19,4 +19,9 @@
   .media_display_none{
     display: none;
   }
+
+  .media_btn_title{
+  margin-left: -15px;
+}
+  
 }
