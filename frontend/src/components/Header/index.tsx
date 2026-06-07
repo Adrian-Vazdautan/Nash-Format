@@ -57,7 +57,7 @@ export default function Header() {
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           w={300}
           rightSection={
-            <ActionIcon variant="subtle" color="gray" onClick={handleSearch}>
+            <ActionIcon variant="subtle" color="gray" component={Link} to="/search" onClick={handleSearch}>
               <IconSearch size={16} />
             </ActionIcon>
           }
@@ -89,7 +89,7 @@ export default function Header() {
                 </Menu>
               </div>
               <Button style={{ marginRight: '10px' }} className="floatLeft hide-text-mobile media_btn_login_signout" variant="subtle" c="black" radius="lg" component={Link} to="/auth">Войти</Button>
-              <Button className="floatLefthide-text-mobile" variant="filled" bg="black" radius="lg" component={Link} to="/register">Регистрация</Button>
+              <Button className="floatLefthide-text-mobile" variant="filled" bg="black" radius="lg" component={Link} to="/signup">Регистрация</Button>
             </div>
           </Group>
         )}
@@ -104,7 +104,7 @@ export default function Header() {
       { /*Mobile*/ }
         <div className="media_btn_login_signout" style={{ marginRight: '-14px' }}>
           <div style={{ float: 'left', height: '36px', display: 'grid', alignItems: 'center', marginRight: '10px' }}>
-            <ActionIcon style={{ float: 'left' }} variant="subtle" color="gray" onClick={handleSearch}>
+            <ActionIcon component={Link} to="/search" style={{ float: 'left' }} variant="subtle" color="gray" onClick={handleSearch}>
               <IconSearch size={16} />
             </ActionIcon>
           </div>
