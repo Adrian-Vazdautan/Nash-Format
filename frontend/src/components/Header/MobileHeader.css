@@ -3,14 +3,20 @@
   display: none;
 }
 
+.media_btn_title{
+  margin-left: 0px;
+}
+
+.floatLeft{
+  float: left;
+}
 
 @media screen and (max-width: 1318px) {
-  
-.media_btn_login_signout{
-  display: block;
-}
+  .media_btn_login_signout{
+    display: block;
+  }
 
-.media_query{
-  display: none;
-}
+  .media_display_none{
+    display: none;
+  }
 }
