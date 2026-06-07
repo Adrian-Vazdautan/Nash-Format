@@ -1,33 +1,16 @@
-@media (max-width: 1318px) {
-  /* 1. Ужимаем хедер до 50px */
-  .header-box {
-    height: 50px !important;
-    padding: 0 8px !important;
-    gap: 4px !important;
-  }
 
-  /* 2. Поиск: теперь это просто иконка, которая при клике расширяется (или просто узкий инпут) */
-  .header-box .mantine-TextInput-root {
-    width: 80px !important; /* Делаем инпут совсем узким */
-    transition: width 0.3s ease;
-  }
+.media_btn_login_signout{
+  display: none;
+}
+
+
+@media screen and (max-width: 1318px) {
   
-  /* При фокусе на поиске — расширяем его */
-  .header-box .mantine-TextInput-root:focus-within {
-    width: 150px !important;
-  }
+.media_btn_login_signout{
+  display: block;
+}
 
-  /* 3. Кнопки: убираем лишний текст, если места совсем нет */
-  /* Если хочешь, чтобы они были ТОЛЬКО иконками, добавь класс hide-text */
-  .hide-text {
-    display: none !important;
-  }
-
-  /* 4. Компактные кнопки */
-  .mantine-Button-root {
-    height: 32px !important;
-    padding: 0 8px !important;
-    font-size: 0.7rem !important;
-    min-width: auto !important;
-  }
+.media_query{
+  display: none;
+}
 }

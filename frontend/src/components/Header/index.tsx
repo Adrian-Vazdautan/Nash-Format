@@ -1,4 +1,4 @@
-import { Group, TextInput, Button, UnstyledButton, Menu, rem, Box, ActionIcon, Indicator } from '@mantine/core';
+import { Group, TextInput, Button, UnstyledButton, Menu, rem, Box, ActionIcon, Indicator, Avatar } from '@mantine/core';
 import { IconSearch, IconChevronDown, IconBell, IconMenu2, IconUserCircle } from '@tabler/icons-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -81,9 +81,10 @@ export default function Header() {
                 <Menu.Item>Русский</Menu.Item>
               </Menu.Dropdown>
             </Menu>
-
-            <Button className="hide-text-mobile" variant="subtle" c="black" radius="lg" component={Link} to="/auth">Войти</Button>
+          <div className="media_query">
+            <Button className="hide-text-mobile media_btn_login_signout" variant="subtle" c="black" radius="lg" component={Link} to="/auth">Войти</Button>
             <Button className="hide-text-mobile" variant="filled" bg="black" radius="lg" component={Link} to="/register">Регистрация</Button>
+          </div>
           </Group>
         )}
         {isAuthenticated && (
@@ -94,9 +95,10 @@ export default function Header() {
           </Indicator>
         )}
       </Group>
-      <ActionIcon variant="filled" color="black" size="lg" radius="lg">
-        <IconUserCircle size={20} />
-      </ActionIcon>
+      { /*Mobile*/ }
+        <div className="media_btn_login_signout">
+          <Avatar src="/path-to-avatar.jpg" radius="xl" />
+        </div>
     </Box>
   );
 }
