@@ -29,6 +29,7 @@ export default function Sidebar() {
   const [opened, { toggle }] = useDisclosure(false);
 
   return (
+    <div className="media_display_none">
     <Box 
       h="calc(100vh - 60px)" 
       w={300} 
@@ -104,6 +105,7 @@ export default function Sidebar() {
         </Stack>
       </ScrollArea>
     </Box>
+    </div>
   );
 }
 

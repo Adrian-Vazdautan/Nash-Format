@@ -14,9 +14,12 @@ export function FeedPage() {
         <PostCard />
         <ArticleLoading />
       </Box>
-      <Box w={280} style={{ flexShrink: 0 }}>
-        <RightSection />
-      </Box>
+
+      <div className="media_display_none">
+        <Box w={280} style={{ flexShrink: 0 }}>
+          <RightSection />
+        </Box>
+      </div>
     </Flex>
   );
 }
