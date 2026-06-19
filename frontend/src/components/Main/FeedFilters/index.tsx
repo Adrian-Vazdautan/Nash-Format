@@ -7,7 +7,8 @@ export function FeedFilters() {
   const [dateRange, setDateRange] = useState('Выбрать интервал');
 
   return (
-    <Group gap="sm" my="xl">
+    <div className="media_feed_filters">
+    <Group gap="sm" my="xl" style={{ width: 'max-content' }}>
       {/* Первая группа: New, The Best */}
       <Button 
         onClick={() => setActive('New')}
@@ -59,5 +60,6 @@ export function FeedFilters() {
         <IconAdjustmentsHorizontal size={18} />
       </ActionIcon>
     </Group>
+    </div>
   );
 }

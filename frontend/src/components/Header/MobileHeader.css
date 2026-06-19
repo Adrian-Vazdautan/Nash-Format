@@ -21,7 +21,18 @@
   }
 
   .media_btn_title{
-  margin-left: -10px;
+    margin-left: -10px;
+  }
+
+  .media_feed_filters {
+  overflow-x: auto;      /* Включаем горизонтальный скролл */
+  max-width: 100%;       /* Не даем вылезать за пределы родителя */
+  flex-wrap: nowrap;     /* Обязательно: запрещаем перенос на новую строку */
+  white-space: nowrap;   /* Если внутри текст или inline-блоки */
+  
+  /* Важно для flex: */
+  flex-shrink: 1;        
+  min-width: 0;          /* Это ключевой трюк: сбрасывает min-width flex-элемента */
 }
   
 }
