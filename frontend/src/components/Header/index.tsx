@@ -15,6 +15,8 @@ export default function Header() {
     if (value.trim()) navigate(`/search?q=${value}`);
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
     <Box className="header-box" 
       h={70} 
@@ -34,7 +36,7 @@ export default function Header() {
       {/* Лого */}
       <div className='media_btn_title'>
         <Group component={Link} to="/feed" style={{ textDecoration: 'none' }}>
-          <ActionIcon 
+          <ActionIcon onClick={toggleMenu}
             className="mobile-only" // Появится только на мобилке
             variant="subtle" 
             color="black"

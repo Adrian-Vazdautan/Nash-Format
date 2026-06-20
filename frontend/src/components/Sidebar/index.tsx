@@ -26,9 +26,11 @@ function TopicItem({ letter, icon, label }) {
 }
 
 export default function Sidebar() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(true);
 
   return (
+    <>
+    {opened && (
     <div className="media_display_none">
     <Box 
       h="calc(100vh - 60px)" 
@@ -106,6 +108,8 @@ export default function Sidebar() {
       </ScrollArea>
     </Box>
     </div>
+    )}
+    </>
   );
 }
 
