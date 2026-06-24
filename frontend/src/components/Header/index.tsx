@@ -6,7 +6,7 @@ import { UserActions } from './UserActions';
 import { useState } from 'react';
 import './MobileHeader.css';
 
-export default function Header() {
+export default function Header({ toggleMenu }) {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [value, setValue] = useState('');
@@ -14,9 +14,7 @@ export default function Header() {
   const handleSearch = () => {
     if (value.trim()) navigate(`/search?q=${value}`);
   };
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
   return (
     <Box className="header-box" 
       h={70} 

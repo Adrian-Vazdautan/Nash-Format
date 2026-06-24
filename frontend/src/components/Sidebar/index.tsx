@@ -25,13 +25,12 @@ function TopicItem({ letter, icon, label }) {
   );
 }
 
-export default function Sidebar() {
-  const [opened, { toggle }] = useDisclosure(true);
+export default function Sidebar({ opened, toggleSidebar }) {
 
   return (
     <>
     {opened && (
-    <div className="media_display_none">
+    <div className="Xmedia_display_none">
     <Box 
       h="calc(100vh - 60px)" 
       w={300} 
@@ -71,7 +70,10 @@ export default function Sidebar() {
 
           <NavLink
             label={opened ? "Свернуть" : "Показать все"}
-            onClick={toggle}
+            onClick={() => {
+    console.log("Кнопка нажата!"); // Если это появится в консоли — значит, проблема в логике Mantine
+    toggleSidebar();
+  }}
             rightSection={opened ? <IconChevronUp size={14}/> : <IconChevronDown size={14}/>}
             styles={{
               root: { color: '#64748b', borderRadius: 8, '&:hover': { backgroundColor: '#f8fafc' } },
